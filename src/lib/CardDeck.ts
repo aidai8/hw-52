@@ -4,11 +4,10 @@ class CardDeck {
     public deck: Card[];
 
     constructor() {
-        const suits = ['Hearts', 'Diamonds', 'Clubs', 'Spades'];
-        const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace'];
-        this.deck= [];
+        const suits = ['hearts', 'diams', 'clubs', 'spades']; // Приведение к правильным значениям
+        const ranks = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']; // Используем сокращённые обозначения
+        this.deck = [];
 
-        // Создаем все возможные карты
         for (const suit of suits) {
             for (const rank of ranks) {
                 this.deck.push(new Card(rank, suit));
