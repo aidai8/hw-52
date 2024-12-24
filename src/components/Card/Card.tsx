@@ -1,10 +1,20 @@
+import React from "react";
 
+const suitSymbols = {
+    diams: "♦",
+    hearts: "♥",
+    clubs: "♣",
+    spades: "♠",
+};
 
-const Card = () => {
+type Suit = keyof typeof suitSymbols;
+
+const Card: React.FC<{ rank: string; suit: Suit }> = ({ rank, suit }) => {
     return (
-        <div>
-
-        </div>
+        <span className={`card rank-${rank.toLowerCase()} ${suit}`}>
+      <span className="rank">{rank}</span>
+      <span className="suit">{suitSymbols[suit]}</span>
+    </span>
     );
 };
 
